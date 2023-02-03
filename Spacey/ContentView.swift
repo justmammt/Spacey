@@ -18,19 +18,34 @@ struct ContentView: View {
                     .font(.system(size: 50, weight: .regular, design: .default))
                     .padding(.horizontal, 160)
                     .foregroundColor(Color(.systemBackground))
-            ScrollView {
-                    RoundedRectangle(cornerRadius: 20)
-                        .padding(.top, 30)
-                        .frame(width: 350, height: 150)
-                        .clipped()
-                        .padding()
-                        .foregroundColor(Color(.systemBackground))
-                        .overlay {
-                            VStack {
-                               Text("")
+                ScrollView {
+                    NavigationLink(destination: GeneratePass()){
+                        
+                        
+                        RoundedRectangle(cornerRadius: 20)
+                            .padding(.top, 30)
+                            .frame(width: 350, height: 100)
+                            .clipped()
+                            .padding()
+                            .foregroundColor(Color(.systemBackground))
+                            .overlay {
+                                VStack {
+                                    Text("Generate new password")
+                                        .fontWeight(.bold)
+                                        .padding(.top, 20)
                                     
+                                        .font(.system(size: 25))
+                                        .foregroundColor(.gray)
+                                    Image(systemName: "circle.fill")
+                                        .imageScale(.large)
+                                        .foregroundColor(Color(.gray))
+                                        .overlay {
+                                            Image(systemName: "arrow.right")
+                                                .foregroundColor(Color(.systemBackground))
+                                        }
+                                }
                             }
-                        }
+                    }
                 }
                 
                 
